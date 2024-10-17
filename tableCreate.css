@@ -1,0 +1,111 @@
+body {
+    display: grid;
+    place-content: center;
+    margin-top: 10%;
+}
+
+table {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    width: auto;
+    height: auto;
+}
+
+button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    touch-action: manipulation;
+    margin-bottom: 40px;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%);
+}
+
+.front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+#toast {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    left: 43%;
+    border-radius: 5px;
+    animation: lathatosag 3s ease-in-out;
+    z-index: 999;
+    opacity: 0;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: larger;
+}
+
+@keyframes lathatosag {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+table {
+    display: none;
+}
